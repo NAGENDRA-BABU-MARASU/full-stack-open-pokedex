@@ -5,10 +5,15 @@ on:
     branches:
       - main
 
-jobs:
+jobs: 
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
     steps:
+      - shell: bash 
+        env: 
+          MY_RENDER_SERVICE_ID : ${{ secrets.MY_RENDER_SERVICE_ID }}
+        run: | 
+          echo "my render service id is : $MY_RENDER_SERVICE_ID"  
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
