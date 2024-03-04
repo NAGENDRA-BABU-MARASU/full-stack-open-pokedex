@@ -46,6 +46,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         with:
           severity: error
+          text: Build failed
           description: ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].committer.name }} build broken ☹️
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
